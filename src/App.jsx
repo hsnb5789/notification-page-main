@@ -7,6 +7,7 @@ import rizkiImg from '../images/avatar-rizky-hasanuddin.webp'
 import kimberlyImg from '../images/avatar-kimberly-smith.webp'
 import nathanImg from '../images/avatar-nathan-peterson.webp'
 import annaImg from '../images/avatar-anna-kim.webp'
+import chess from "../images/image-chess.webp"
 
 function App() {
 
@@ -17,21 +18,12 @@ function App() {
   
   let isMarkedRead=false; 
   const markAllAsRead = () => {
-    if (isMarkedRead ===false) {
-      notifications.forEach((notification) => {
-        notification.classList.remove("new-notification")
-        symbol.forEach((sym) => sym.classList.remove("new-notification-highlight-symbols"))
-        // numberOfNotifications.textContent = "0";
-        numberOfNotifications.textContent = !isMarkedRead ? "0" : "3";
-      }); 
-      return isMarkedRead =true;
-    }else{
-      alert('You have already marked all as read!')
-  }
-    
-    console.log()
-    // isMarkedRead =!isMarkedRead;
-    return isMarkedRead=false;  
+    numberOfNotifications.textContent = !isMarkedRead ? "0" : "3";
+    notifications.forEach((notification) => {
+      notification.classList.toggle("new-notification")
+      symbol.forEach((sym) => sym.classList.toggle("new-notification-highlight-symbols"))
+    }); 
+      isMarkedRead=!isMarkedRead;
   }
 
   return (
@@ -81,7 +73,7 @@ function App() {
                   <p className="time">1 week ago</p>
                 <div className="Kimberly"></div>
               </div>
-                  <div className="image-container kimberly-img"><img src='/images/image-chess.webp'></img></div>      
+                  <div className="image-container kimberly-img"><img src={chess}></img></div>      
             </div>
         
             <div className="notification-content">
