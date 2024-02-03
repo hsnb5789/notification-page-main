@@ -81,7 +81,7 @@ function App() {
                   <p className="time">1 week ago</p>
                 <div className="Kimberly"></div>
               </div>
-                  <div className="image-container kimberly-img"><img src='./images/image-chess.webp'></img></div>      
+                  <div className="image-container kimberly-img"><img src='/images/image-chess.webp'></img></div>      
             </div>
         
             <div className="notification-content">
